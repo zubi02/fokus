@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fokus Wächter</string>
+    <string name="service_description">Schliesst YouTube Shorts und Snapchat Spotlight sofort wieder, sobald sie geöffnet werden. Liest dafür, welche Seite in YouTube, Snapchat und Chrome gerade offen ist. Es werden keine Daten gespeichert oder gesendet.</string>
+</resources>

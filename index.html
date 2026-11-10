@@ -81,6 +81,7 @@ p { margin: 0; }
 }
 .btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
 ol, ul { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 8px; }
+code { font-family: ui-monospace, Consolas, monospace; font-size: 0.9em; overflow-wrap: anywhere; }
 .notice {
   background: var(--warn-bg);
   color: var(--warn-fg);
@@ -94,18 +95,36 @@ ol, ul { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; 
 <main>
   <div class="stack">
     <h1>Fokus Wächter</h1>
-    <p>Sperrt Shorts und Spotlight direkt in deinen Apps YouTube und Snapchat. Sobald du dort landest, wirst du sofort zurückgeworfen. Chats und Stories bleiben offen.</p>
+    <p>Sperrt Shorts und Spotlight direkt in deinen Apps YouTube und Snapchat. Sobald du dort landest, wechselt der Wächter in YouTube auf «Home» und in Snapchat in den Chat. Chats und Stories bleiben offen.</p>
   </div>
 
   <a class="btn" href="fokus-waechter.apk">App herunterladen (Android)</a>
 
   <div class="card stack">
-    <h2>Einrichten</h2>
+    <h2>Installieren</h2>
     <ol>
       <li>Oben auf «App herunterladen» tippen und die Datei öffnen.</li>
-      <li>Android fragt, ob dein Browser Apps installieren darf: erlauben, dann «Installieren». Eine Warnung vor einer unbekannten App mit «Trotzdem installieren» bestätigen.</li>
-      <li>Einstellungen → Apps → Fokus Wächter → oben rechts ⋮ → «Eingeschränkte Einstellungen zulassen».</li>
+      <li>Android fragt, ob dein Browser Apps installieren darf: erlauben, dann «Installieren».</li>
+    </ol>
+  </div>
+
+  <div class="card stack">
+    <h2>Falls Play Protect blockiert</h2>
+    <p>Manche Handys zeigen «App blocked to protect your device» und bieten nur «OK» an. Dann geht die Installation über einen Computer:</p>
+    <ol>
+      <li>Auf dem Computer die <a href="https://developer.android.com/tools/releases/platform-tools">Android Platform-Tools</a> von Google und diese <a href="fokus-waechter.apk">App-Datei</a> herunterladen.</li>
+      <li>Auf dem Handy: Einstellungen → «Über das Telefon» → siebenmal auf «Build-Nummer» tippen. Danach in den Entwickleroptionen «USB-Debugging» einschalten und das Handy mit einem Datenkabel anschliessen.</li>
+      <li>Auf dem Computer im Ordner der Platform-Tools ausführen: <code>adb install fokus-waechter.apk</code></li>
+      <li>USB-Debugging danach wieder ausschalten.</li>
+    </ol>
+    <p class="muted">Ohne Kabel geht es über «Debugging über WLAN». Die genauen Schritte stehen in der <a href="https://github.com/zubi02/fokus#readme">Anleitung auf GitHub</a>.</p>
+  </div>
+
+  <div class="card stack">
+    <h2>Einschalten</h2>
+    <ol>
       <li>Fokus Wächter öffnen → «Bedienungshilfe einschalten» → in der Liste «Fokus Wächter» antippen und einschalten.</li>
+      <li>Falls der Schalter grau ist: Einstellungen → Apps → Fokus Wächter → oben rechts ⋮ → «Eingeschränkte Einstellungen zulassen», dann nochmals versuchen.</li>
     </ol>
   </div>
 
@@ -123,7 +142,8 @@ ol, ul { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; 
     <strong>Falls etwas nicht gesperrt wird:</strong> In der App «Diagnose starten» antippen, dann in YouTube oder Snapchat die Seite öffnen, die gesperrt sein sollte. Zurück in der App «Liste kopieren» und die Liste weitergeben. Damit lässt sich die Erkennung anpassen.
   </div>
 
-  <p class="muted">Der Wächter liest nur, welche Seite in YouTube, Snapchat und Chrome gerade offen ist. Er speichert und sendet keine Daten.</p>
+  <p class="muted">Der Wächter liest nur, welche Seite in YouTube, Snapchat und Chrome gerade offen ist. Er speichert und sendet keine Daten. Nur für Android: Auf dem iPhone erlaubt das System keiner App, Bereiche einer anderen App zu sperren.</p>
+  <p class="muted"><a href="https://github.com/zubi02/fokus">Anleitung und Quellcode auf GitHub</a></p>
 </main>
 <script>
 // Alte Offline-Kopie der früheren Version entfernen.
